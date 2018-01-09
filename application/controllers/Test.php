@@ -38,7 +38,14 @@
            );
 
            $this->parser->parse('blog_template', $data);*/
-           $template = 'Hello, {firstname} {lastname} ({degrees}{degree} {/degrees})';
+           $template = '
+           <h1>Test Template</h1>
+                <h3>Hello, {firstname} {lastname}</h3>
+            <ol type="1">
+            {degrees}
+                <li>.{degree}</li> 
+            {/degrees}
+            </ol>';
            $data = array(
                'degree' => 'Mr',
                'firstname' => 'John',
@@ -50,5 +57,41 @@
            );
            $this->parser->parse_string($template, $data);
        }
+       /* Using DataBase */
+       public function toDb(){
+           //$this->load->database(); //Mannal connect
+           $data = array(
+               'name' => 'Virat'
+           );
+
+           $this->db->insert("stud", $data);
+       }
+       public function updateDb(){
+           $data = array(
+               'name' => 'sabeer zabi'
+           );
+
+           $this->db->set($data);
+           $this->db->where("id", 1);
+           $this->db->update("stud", $data);
+
+       }
+       public function deleteDb(){
+           $this->db->delete("stud", "id = 3");
+           //delete([$table = ''[, $where = ''[, $limit = NULL[, $reset_data = TRUE]]]])
+       }
+
+       public function fromDb(){
+           //$this->db->where("id", 1);
+           $this->db->like("name", "%b%");
+           $query = $this->db->get("stud");
+           $data['records'] = $query->result();
+           print_r($data);
+           $this->db->close();// for closing db
+//           get([$table = ''[, $limit = NULL[, $offset = NULL]]])
+       }
+
+
+
 
    }
