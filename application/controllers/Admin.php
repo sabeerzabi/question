@@ -14,9 +14,9 @@
        public function view($page = 'home') {
            $this->load->helper('url');
            if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
-               //$pageData['title'] = "404 Error";
-              // self::display_page('page_404',$pageData);
-               show_404();
+               $pageData['title'] = "404 Error";
+               self::display_page('page_404',$pageData);
+              // show_404();
            }
            else{
 
