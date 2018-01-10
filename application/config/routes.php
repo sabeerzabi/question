@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
-$route['404_override'] = '';
+$route['404_override'] = 'cuserror/show_404';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['stud'] = "StudController";
@@ -58,3 +58,5 @@ $route['stud/add'] = 'StudController/add_student';
 $route['stud/add_view'] = 'StudController/add_student_view';
 $route['stud/edit/(\d+)'] = 'StudController/update_student_view/$1';
 $route['stud/delete/(\d+)'] = 'StudController/delete_student/$1';
+
+$route['admin/(:any)'] = 'admin/view/$1';
