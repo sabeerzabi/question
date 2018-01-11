@@ -60,3 +60,12 @@ $route['stud/edit/(\d+)'] = 'StudController/update_student_view/$1';
 $route['stud/delete/(\d+)'] = 'StudController/delete_student/$1';
 
 $route['admin/(:any)'] = 'admin/view/$1';
+
+$route['admin/question/(:any)'] = 'admin/question/$1';
+
+
+
+
+
+
+

@@ -39,6 +39,26 @@
             <li class="cat__menu-left__divider"><!-- --></li>
             <li class="cat__menu-left__item cat__menu-left__submenu">
                 <a href="javascript: void(0);">
+                    <span class="cat__menu-left__icon icmn-question"></span>
+                    Question
+                </a>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item">
+                        <a href="<?=base_url()?>question/qlist">
+                            <span class="cat__menu-left__icon">QL</span>
+                            Question List
+                        </a>
+                    </li>
+                    <li class="cat__menu-left__item">
+                        <a href="<?=base_url()?>question/add">
+                            <span class="cat__menu-left__icon">QA</span>
+                            Question Add
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="cat__menu-left__item cat__menu-left__submenu">
+                <a href="javascript: void(0);">
                     <span class="cat__menu-left__icon icmn-file-text"></span>
                     Default Pages
                 </a>
